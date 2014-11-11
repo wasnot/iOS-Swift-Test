@@ -32,6 +32,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
 
 //        completionHandler(NCUpdateResult.NewData)
+        println("widget update")
         
         self.updateLabel()
         completionHandler(NCUpdateResult.NewData)
@@ -39,6 +40,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func updateLabel()
     {
+        println("widget update")
+
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
 //        self.label.text = dateFormatter.stringFromDate(NSDate())
@@ -57,7 +60,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             //        CFDictionaryRef
             println("dicRef,")
                         var dicRef = CNCopyCurrentNetworkInfo(value)
-            println(dicRef)
+//            println(dicRef)
             if(dicRef==nil){
             }else{
             println("dic,")
@@ -94,8 +97,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.updateLabel()
     }
     
-//    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets
-//    {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets
+    {
+        return UIEdgeInsets(top: defaultMarginInsets.top, left: defaultMarginInsets.left, bottom: 0, right: defaultMarginInsets.right)
+    }
 }
