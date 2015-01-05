@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  WifiWidget
+
+  Created by AidaAkihiro on 2014/11/13.
+  Copyright (c) 2014年 Wasnot Apps. All rights reserved.
+*/
+CFBundleName = "Wifi名確認";
+CFBundleDisplayName = "Wifi名確認";
