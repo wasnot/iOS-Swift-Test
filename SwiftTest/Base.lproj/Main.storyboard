@@ -19,9 +19,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uE-Vx-U8b">
                                 <rect key="frame" x="279" y="467" width="42" height="21"/>
-                                <string key="text">「Wifi名確認」は現在接続中のWi-Fiスポットの名前(SSID)をすぐに確認できるウィジェットアプリです。
-通知領域の「今日」の一番したの編集ボタンを押して「Wifi名確認」ウィジェットを追加してください。
-ネットワークが遅いときなど、どのWifiにつながっているのか瞬時に確認することができます。</string>
+                                <mutableString key="text">"Wifi Name Check" is a very simple widget app that make able to check immediately the name of Wi-Fi spot (SSID) currently connected to.
+Please add "Wifi Name Check" widget by pressing the edit at the bottom button of "Today" in the notification area.
+Such as when the network is slow, you can check which Wi-Fi connected to  immediately.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
