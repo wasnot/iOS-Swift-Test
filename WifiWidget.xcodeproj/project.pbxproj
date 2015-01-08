@@ -22,6 +22,7 @@
 		AB79463A19F8CF960098AD7B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB79463919F8CF960098AD7B /* MainInterface.storyboard */; };
 		AB79463D19F8CF960098AD7B /* WifiCheckWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AB79463019F8CF950098AD7B /* WifiCheckWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AB79464319F967F60098AD7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB79464219F967F60098AD7B /* SystemConfiguration.framework */; };
+		ABEB1D441A5E24EC005AAB9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB58C20E19F8CE19003F287A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		AB79464219F967F60098AD7B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AB79464719F96BE70098AD7B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		AB79464A19F970500098AD7B /* SwiftWidgetTest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWidgetTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		ABEB1D421A5E2369005AAB9B /* WifiWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WifiWidget.entitlements; sourceTree = "<group>"; };
+		ABEB1D431A5E23A4005AAB9B /* WifiCheckWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WifiCheckWidget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 		AB58C1F919F8CE19003F287A = {
 			isa = PBXGroup;
 			children = (
+				ABEB1D431A5E23A4005AAB9B /* WifiCheckWidget.entitlements */,
+				ABEB1D421A5E2369005AAB9B /* WifiWidget.entitlements */,
 				AB435B071A157DF200BD630F /* launcher.png */,
 				AB58C20419F8CE19003F287A /* SwiftTest */,
 				AB58C21A19F8CE19003F287A /* SwiftTestTests */,
@@ -279,6 +284,12 @@
 				TargetAttributes = {
 					AB58C20119F8CE19003F287A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = GL3NKE9BN8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					AB58C21619F8CE19003F287A = {
 						CreatedOnToolsVersion = 6.1;
@@ -286,6 +297,12 @@
 					};
 					AB79462F19F8CF950098AD7B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = GL3NKE9BN8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -335,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEB1D441A5E24EC005AAB9B /* Images.xcassets in Resources */,
 				AB79463A19F8CF960098AD7B /* MainInterface.storyboard in Resources */,
 				AB435AFF1A152E5700BD630F /* InfoPlist.strings in Resources */,
 			);
@@ -506,10 +524,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = WifiWidget;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -517,10 +538,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = WifiWidget;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -564,6 +588,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -571,6 +597,7 @@
 				INFOPLIST_FILE = SwiftWidgetTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftWidgetTest/SwiftWidgetTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -583,9 +610,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftWidgetTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftWidgetTest/SwiftWidgetTest-Bridging-Header.h";
 			};

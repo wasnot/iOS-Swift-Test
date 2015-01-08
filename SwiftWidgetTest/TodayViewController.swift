@@ -50,53 +50,58 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         // 3G接続の場合はnilが戻されるので、以降のコードで注意する。
         //        CFArrayRef
-        var interface : Array = CNCopySupportedInterfaces().takeRetainedValue()
-        
-        if(interface.count>0){
-            //            var intArray : Array = interface.takeRetainedValue()
-            var value : String = interface[0] as String
-            println("value:"+value)
-            
-            //        CFDictionaryRef
-            println("dicRef,")
-            var dicRef = CNCopyCurrentNetworkInfo(value)
-            //            println(dicRef)
-            if(dicRef==nil){
-                self.label.text = "network infoない"
-                success = true
-            }else{
-                println("dic,")
-                var dic : Dictionary = dicRef.takeRetainedValue()
-                println(dic)
+        var interfaceOpt = CNCopySupportedInterfaces()
+        if(interfaceOpt==nil){
+            self.label.text = "interface nil"
+            success = true
+        }else{
+            var interface : Array = interfaceOpt!.takeRetainedValue()
+            if(interface.count>0){
+                //            var intArray : Array = interface.takeRetainedValue()
+                var value : String = interface[0] as String
+                println("value:"+value)
                 
-                if(dic.count>0){
-                    println(dic.count)
-                    var ssid : String? = dic[kCNNetworkInfoKeySSID] as? String
-                    if(ssid != nil){
-                        println(ssid)
-                        self.label.text = ssid
-                        success = true
-                    } else {
-                        self.label.text = "ssidない"
+                //        CFDictionaryRef
+                println("dicRef,")
+                var dicRef = CNCopyCurrentNetworkInfo(value)
+                //            println(dicRef)
+                if(dicRef==nil){
+                    self.label.text = "network infoない"
+                    success = true
+                }else{
+                    println("dic,")
+                    var dic : Dictionary = dicRef.takeRetainedValue()
+                    println(dic)
+                    
+                    if(dic.count>0){
+                        println(dic.count)
+                        var ssid : String? = dic[kCNNetworkInfoKeySSID] as? String
+                        if(ssid != nil){
+                            println(ssid)
+                            self.label.text = ssid
+                            success = true
+                        } else {
+                            self.label.text = "ssidない"
+                            success = true
+                        }
+                        //        var dicRef = CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(interface, 0) as CFStringRef);
+                        
+                        //        if (dicRef) {
+                        //            ssid = CFDictionaryGetValue(dicRef, kCNNetworkInfoKeySSID);
+                        // Macアドレスを取得
+                        //macAddress = CFDictionaryGetValue(dicRef, kCNNetworkInfoKeyBSSID);
+                        
+                        //            NSLog(@"%@", ssid);
+                        //        }
+                    }else{
+                        self.label.text = "wifiつながってない"
                         success = true
                     }
-                    //        var dicRef = CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(interface, 0) as CFStringRef);
-                    
-                    //        if (dicRef) {
-                    //            ssid = CFDictionaryGetValue(dicRef, kCNNetworkInfoKeySSID);
-                    // Macアドレスを取得
-                    //macAddress = CFDictionaryGetValue(dicRef, kCNNetworkInfoKeyBSSID);
-                    
-                    //            NSLog(@"%@", ssid);
-                    //        }
-                }else{
-                    self.label.text = "wifiつながってない"
-                    success = true
                 }
+            }else{
+                self.label.text = "interfaceない"
+                success = true
             }
-        }else{
-            self.label.text = "interfaceない"
-            success = true
         }
         
         if(!success){
