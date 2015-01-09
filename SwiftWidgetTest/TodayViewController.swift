@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateLabel()
         // Do any additional setup after loading the view from its nib.
     }
     
@@ -52,7 +53,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         //        CFArrayRef
         var interfaceOpt = CNCopySupportedInterfaces()
         if(interfaceOpt==nil){
-            self.label.text = "interface nil"
+            self.label.text = NSLocalizedString("LABEL_NO_WIFI", comment: "Wi-Fi disable")
+            //"interface nil"
             success = true
         }else{
             var interface : Array = interfaceOpt!.takeRetainedValue()
@@ -66,7 +68,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 var dicRef = CNCopyCurrentNetworkInfo(value)
                 //            println(dicRef)
                 if(dicRef==nil){
-                    self.label.text = "network infoない"
+                    self.label.text = NSLocalizedString("LABEL_NO_CONNECT", comment: "Not connected")
+//                    self.label.text = "network infoない"
                     success = true
                 }else{
                     println("dic,")
@@ -81,7 +84,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                             self.label.text = ssid
                             success = true
                         } else {
-                            self.label.text = "ssidない"
+                            self.label.text = NSLocalizedString("LABEL_NO_SSID", comment: "Unknown")
+//                            self.label.text = "ssidない"
                             success = true
                         }
                         //        var dicRef = CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(interface, 0) as CFStringRef);
@@ -94,19 +98,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         //            NSLog(@"%@", ssid);
                         //        }
                     }else{
-                        self.label.text = "wifiつながってない"
+                        self.label.text = NSLocalizedString("LABEL_NO_CONNECT", comment: "Not connected")
+//                        self.label.text = "wifiつながってない"
                         success = true
                     }
                 }
             }else{
-                self.label.text = "interfaceない"
+                self.label.text = NSLocalizedString("LABEL_NO_WIFI", comment: "Wi-Fi disable")
+//                self.label.text = "interfaceない"
                 success = true
             }
         }
         
         if(!success){
             //            self.label.text = dateFormatter.stringFromDate(NSDate())
-            self.label.text = "確認中"
+            self.label.text = NSLocalizedString("LABEL_LOADING", comment: "Loading...")
+//            self.label.text = "確認中"
         }
     }
     
