@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WifiWidget
+
+  Created by AidaAkihiro on 2015/01/09.
+  Copyright (c) 2015年 Wasnot Apps. All rights reserved.
+ */
+
+"LABEL_LOADING" = "Loading...";
+"LABEL_NO_WIFI" = "Wi-Fi disable";
+"LABEL_NO_CONNECT" = "Not connected";
+"LABEL_NO_SSID" = "Unknown";

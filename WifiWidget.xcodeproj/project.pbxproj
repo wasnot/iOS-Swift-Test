@@ -22,6 +22,7 @@
 		AB79463A19F8CF960098AD7B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB79463919F8CF960098AD7B /* MainInterface.storyboard */; };
 		AB79463D19F8CF960098AD7B /* WifiCheckWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AB79463019F8CF950098AD7B /* WifiCheckWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AB79464319F967F60098AD7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB79464219F967F60098AD7B /* SystemConfiguration.framework */; };
+		AB7BAB781A5FCCEA00C7367B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB7BAB7A1A5FCCEA00C7367B /* Localizable.strings */; };
 		ABEB1D441A5E24EC005AAB9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB58C20E19F8CE19003F287A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,8 @@
 		AB79464219F967F60098AD7B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AB79464719F96BE70098AD7B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		AB79464A19F970500098AD7B /* SwiftWidgetTest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWidgetTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB7BAB7B1A5FCCED00C7367B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AB7BAB7C1A5FCCFC00C7367B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABEB1D421A5E2369005AAB9B /* WifiWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WifiWidget.entitlements; sourceTree = "<group>"; };
 		ABEB1D431A5E23A4005AAB9B /* WifiCheckWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WifiCheckWidget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +206,7 @@
 				AB79463919F8CF960098AD7B /* MainInterface.storyboard */,
 				AB79463519F8CF950098AD7B /* Supporting Files */,
 				AB79464A19F970500098AD7B /* SwiftWidgetTest-Bridging-Header.h */,
+				AB7BAB7A1A5FCCEA00C7367B /* Localizable.strings */,
 			);
 			path = SwiftWidgetTest;
 			sourceTree = "<group>";
@@ -353,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABEB1D441A5E24EC005AAB9B /* Images.xcassets in Resources */,
+				AB7BAB781A5FCCEA00C7367B /* Localizable.strings in Resources */,
 				AB79463A19F8CF960098AD7B /* MainInterface.storyboard in Resources */,
 				AB435AFF1A152E5700BD630F /* InfoPlist.strings in Resources */,
 			);
@@ -436,6 +441,15 @@
 				AB435B041A1530E900BD630F /* ja */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		AB7BAB7A1A5FCCEA00C7367B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB7BAB7B1A5FCCED00C7367B /* Base */,
+				AB7BAB7C1A5FCCFC00C7367B /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
