@@ -43,13 +43,15 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "WifiWidget_wicon_ipad1.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "WifiWidget_icon_widget_ipad_.png",
       "scale" : "2x"
     }
   ],
