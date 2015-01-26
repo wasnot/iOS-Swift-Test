@@ -1,0 +1,6 @@
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "9uE-Vx-U8b"; */
+"9uE-Vx-U8b.text" = "「Wifi名確認」は現在接続中のWi-Fiスポットの名前(SSID)をすぐに確認できるシンプルなウィジェットアプリです。\n通知領域の「今日」の一番したの編集ボタンを押して「Wifi名確認」ウィジェットを追加してください。\nネットワークが遅いときなど、どのWifiにつながっているのか瞬時に確認することができます。";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "FkN-DM-Vnd"; */
+"FkN-DM-Vnd.normalTitle" = "Button";
