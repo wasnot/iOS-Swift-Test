@@ -23,6 +23,10 @@
 		AB79463D19F8CF960098AD7B /* WifiCheckWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AB79463019F8CF950098AD7B /* WifiCheckWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AB79464319F967F60098AD7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB79464219F967F60098AD7B /* SystemConfiguration.framework */; };
 		AB7BAB781A5FCCEA00C7367B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB7BAB7A1A5FCCEA00C7367B /* Localizable.strings */; };
+		ABB484A51A723BCC00223E0F /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB484A41A723BCC00223E0F /* refresh.png */; };
+		ABB484A61A723BCC00223E0F /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB484A41A723BCC00223E0F /* refresh.png */; };
+		ABB484A81A727C9100223E0F /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB484A71A727C9100223E0F /* refresh@2x.png */; };
+		ABB484A91A727C9100223E0F /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB484A71A727C9100223E0F /* refresh@2x.png */; };
 		ABEB1D441A5E24EC005AAB9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB58C20E19F8CE19003F287A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,8 @@
 		AB79464A19F970500098AD7B /* SwiftWidgetTest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftWidgetTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB7BAB7B1A5FCCED00C7367B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB7BAB7C1A5FCCFC00C7367B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABB484A41A723BCC00223E0F /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		ABB484A71A727C9100223E0F /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		ABEB1D421A5E2369005AAB9B /* WifiWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WifiWidget.entitlements; sourceTree = "<group>"; };
 		ABEB1D431A5E23A4005AAB9B /* WifiCheckWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WifiCheckWidget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,7 +208,9 @@
 		AB79463419F8CF950098AD7B /* SwiftWidgetTest */ = {
 			isa = PBXGroup;
 			children = (
+				ABB484A41A723BCC00223E0F /* refresh.png */,
 				AB79463719F8CF950098AD7B /* TodayViewController.swift */,
+				ABB484A71A727C9100223E0F /* refresh@2x.png */,
 				AB79463919F8CF960098AD7B /* MainInterface.storyboard */,
 				AB79463519F8CF950098AD7B /* Supporting Files */,
 				AB79464A19F970500098AD7B /* SwiftWidgetTest-Bridging-Header.h */,
@@ -338,7 +346,9 @@
 			files = (
 				AB435B0B1A1C668E00BD630F /* demo_ss01.png in Resources */,
 				AB58C20D19F8CE19003F287A /* Main.storyboard in Resources */,
+				ABB484A81A727C9100223E0F /* refresh@2x.png in Resources */,
 				AB435AF91A152E1300BD630F /* InfoPlist.strings in Resources */,
+				ABB484A51A723BCC00223E0F /* refresh.png in Resources */,
 				AB58C21219F8CE19003F287A /* LaunchScreen.xib in Resources */,
 				AB435B081A157DF200BD630F /* launcher.png in Resources */,
 				AB58C20F19F8CE19003F287A /* Images.xcassets in Resources */,
@@ -360,6 +370,8 @@
 				AB7BAB781A5FCCEA00C7367B /* Localizable.strings in Resources */,
 				AB79463A19F8CF960098AD7B /* MainInterface.storyboard in Resources */,
 				AB435AFF1A152E5700BD630F /* InfoPlist.strings in Resources */,
+				ABB484A91A727C9100223E0F /* refresh@2x.png in Resources */,
+				ABB484A61A723BCC00223E0F /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
