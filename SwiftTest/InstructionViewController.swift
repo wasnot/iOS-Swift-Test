@@ -24,16 +24,32 @@ class InstructionViewController: UIViewController, UIPageViewControllerDataSourc
         let startingViewController: InstructionContentViewController = viewControllerAtIndex(0)!
         let viewControllers: NSArray = [startingViewController]
         pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
-        pageViewController!.view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height-100);
+        pageViewController!.view.frame = CGRectMake(0, 100, view.frame.size.width, view.frame.size.height-100);
         
         addChildViewController(pageViewController!)
         view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
+        
+        // NavigationBarの表示する.
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        // addBtnを設置
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "onClick")
+        self.navigationItem.rightBarButtonItem = addBtn
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func pushBackButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // addBtnをタップしたときのアクション
+    func onClick() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+//        self.navigationController?.pushViewController(second, animated: true)
     }
     
     /*

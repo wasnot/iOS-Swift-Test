@@ -1,6 +1,17 @@
-
-/* Class = "IBUILabel"; text = "Label"; ObjectID = "9uE-Vx-U8b"; */
 "9uE-Vx-U8b.text" = "「Wifi名確認」は現在接続中のWi-Fiスポットの名前(SSID)をすぐに確認できるシンプルなウィジェットアプリです。\n通知領域の「今日」の一番したの編集ボタンを押して「Wifi名確認」ウィジェットを追加してください。\nネットワークが遅いときなど、どのWifiにつながっているのか瞬時に確認することができます。";
 
-/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "FkN-DM-Vnd"; */
-"FkN-DM-Vnd.normalTitle" = "Button";
+/* Class = "IBUILabel"; text = "1. 通知領域を引き下げます。
+ 2. 「今日」タブを表示します。
+ 3. 最下部までスクロールして「編集」ボタンをタップします。
+ 4. アプリリストから「Wifi SSID」を探し、「＋」ボタンで追加します。
+ 5. 「完了」ボタンをタップします。"; ObjectID = "PVo-vl-rZ2"; */
+"PVo-vl-rZ2.text" = "1. 通知領域を引き下げます。\n2. 「今日」タブを表示します。\n3. 最下部までスクロールして「編集」ボタンをタップします。\n4. アプリリストから「Wifi SSID」を探し、「＋」ボタンで追加します。\n5. 「完了」ボタンをタップします。";
+
+/* Class = "IBUILabel"; text = "設定方法"; ObjectID = "Q2I-l5-tD0"; */
+"Q2I-l5-tD0.text" = "設定方法";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "iLM-2L-cSi"; */
+"iLM-2L-cSi.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "閉じる"; ObjectID = "mPe-l8-cOx"; */
+"mPe-l8-cOx.normalTitle" = "閉じる";

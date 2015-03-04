@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     @IBAction func pushButton(sender: AnyObject) {
         label.text = label.text! + "へえ";
     }
+    @IBAction func unwindToTop(segue:UIStoryboardSegue )    {
+    }
     
     func resizeLabel(){
         // --- テキストの内容によりラベルの大きさを変える ---
