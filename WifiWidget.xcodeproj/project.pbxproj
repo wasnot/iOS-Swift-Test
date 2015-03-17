@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB2C015C1A95B1FE00BDCFA0 /* InstructionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C015B1A95B1FE00BDCFA0 /* InstructionContentViewController.swift */; };
+		AB3279A21AB2BA190009FB3A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3279A11AB2BA190009FB3A /* SettingTableViewController.swift */; };
 		AB435AF91A152E1300BD630F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB435AFC1A152E1300BD630F /* InfoPlist.strings */; };
 		AB435AFF1A152E5700BD630F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB435B011A152E5700BD630F /* InfoPlist.strings */; };
 		AB435B081A157DF200BD630F /* launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = AB435B071A157DF200BD630F /* launcher.png */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		AB2C015B1A95B1FE00BDCFA0 /* InstructionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionContentViewController.swift; sourceTree = "<group>"; };
+		AB3279A11AB2BA190009FB3A /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		AB435AFB1A152E1300BD630F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB435B001A152E5700BD630F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB435B031A1530E900BD630F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				AB58C20519F8CE19003F287A /* Supporting Files */,
 				ABB75F8D1A83932C00F75570 /* InstructionViewController.swift */,
 				AB2C015B1A95B1FE00BDCFA0 /* InstructionContentViewController.swift */,
+				AB3279A11AB2BA190009FB3A /* SettingTableViewController.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				AB2C015C1A95B1FE00BDCFA0 /* InstructionContentViewController.swift in Sources */,
 				AB58C20A19F8CE19003F287A /* ViewController.swift in Sources */,
 				AB58C20819F8CE19003F287A /* AppDelegate.swift in Sources */,
+				AB3279A21AB2BA190009FB3A /* SettingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

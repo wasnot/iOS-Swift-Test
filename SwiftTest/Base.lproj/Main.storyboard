@@ -42,16 +42,27 @@ Such as when the network is slow, you can check which Wi-Fi connected to  immedi
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKA-SW-seq">
+                                <rect key="frame" x="16" y="558" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="x8J-tV-YSJ" kind="showDetail" id="jfb-cK-fxs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dka-uZ-ynv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4Gq-6j-2nu"/>
+                            <constraint firstItem="fKA-SW-seq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IkU-Hi-e3d"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9uE-Vx-U8b" secondAttribute="bottom" constant="20" id="Kse-Am-Szq"/>
                             <constraint firstAttribute="centerX" secondItem="S7u-Wa-DQk" secondAttribute="centerX" id="NL6-QO-nUD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9uE-Vx-U8b" secondAttribute="trailing" constant="20" id="ThP-ue-FBD"/>
                             <constraint firstItem="9uE-Vx-U8b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="biI-gl-8iv"/>
                             <constraint firstItem="9uE-Vx-U8b" firstAttribute="top" secondItem="S7u-Wa-DQk" secondAttribute="bottom" constant="20" id="dWc-cD-Djg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dka-uZ-ynv" secondAttribute="bottom" constant="20" id="oDT-Cb-KCy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fKA-SW-seq" secondAttribute="bottom" constant="20" id="rEI-0i-3hJ"/>
                             <constraint firstItem="S7u-Wa-DQk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="vD8-0j-Vbb"/>
                         </constraints>
                     </view>
@@ -117,7 +128,61 @@ Such as when the network is slow, you can check which Wi-Fi connected to  immedi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSx-Dj-UIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZZi-Mf-CAU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="494" y="219"/>
+            <point key="canvasLocation" x="620" y="219"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ql4-6R-me5">
+            <objects>
+                <tableViewController id="Oza-T9-Yzd" customClass="SettingTableViewController" customModule="WifiWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Vbr-0w-y0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="ZPp-Ax-GcV" detailTextLabel="c3e-Cd-rT4" style="IBUITableViewCellStyleValue1" id="6RA-A0-b8L">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6RA-A0-b8L" id="qFh-HI-rqj">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZPp-Ax-GcV">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c3e-Cd-rT4">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Oza-T9-Yzd" id="h06-lD-bki"/>
+                            <outlet property="delegate" destination="Oza-T9-Yzd" id="hIh-B6-2sZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Kgz-cu-9oL">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="vDw-t3-lfF">
+                            <connections>
+                                <action selector="pushBackButton:" destination="Oza-T9-Yzd" id="cCx-Dh-mUp"/>
+                                <segue destination="tog-Xg-ISt" kind="unwind" unwindAction="unwindToTop:" id="4en-ig-eIC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SettingTable" destination="Vbr-0w-y0Z" id="qKc-w9-21J"/>
+                        <outlet property="SettingTitle" destination="Kgz-cu-9oL" id="Eyc-nC-3b9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9r-x8-37l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tog-Xg-ISt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="958"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="sYK-yB-ZVq">
@@ -153,6 +218,24 @@ Such as when the network is slow, you can check which Wi-Fi connected to  immedi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAr-bP-nYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="494" y="-479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3jZ-UW-QTG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x8J-tV-YSJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SB4-BY-3Ey">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Oza-T9-Yzd" kind="relationship" relationship="rootViewController" id="XEZ-wE-AYm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNr-9c-lU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192" y="958"/>
         </scene>
     </scenes>
     <resources>
