@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WifiWidget
+
+  Created by AidaAkihiro on 2015/03/18.
+  Copyright (c) 2015年 Wasnot Apps. All rights reserved.
+*/
+
+"LABEL_SETTING_SEC_APP" = "About app";
+"LABEL_SETTING_SEC_DISPLAY" = "Display settings";
+"LABEL_SETTING_APP_APP_VERSION" = "App version";
+"LABEL_SETTING_DISPLAY_SSID" = "Spot name (SSID)";
+"LABEL_SETTING_DISPLAY_MAC" = "Mac address";

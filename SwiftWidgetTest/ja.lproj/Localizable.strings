@@ -10,4 +10,6 @@
 "LABEL_LOADING" = "確認中";
 "LABEL_NO_WIFI" = "Wi-Fiがオフです";
 "LABEL_NO_CONNECT" = "接続されていません";
-"LABEL_NO_SSID" = "不明";
+"LABEL_NO_SSID" = "SSID不明";
+"LABEL_NO_MAC" = "Mac不明";
+"LABEL_NO_DISPLAY" = "非表示";

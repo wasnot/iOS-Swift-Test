@@ -9,4 +9,6 @@
 "LABEL_LOADING" = "Loading...";
 "LABEL_NO_WIFI" = "Wi-Fi disable";
 "LABEL_NO_CONNECT" = "Not connected";
-"LABEL_NO_SSID" = "Unknown";
+"LABEL_NO_SSID" = "Unknown SSID";
+"LABEL_NO_MAC" = "Unknown mac address";
+"LABEL_NO_DISPLAY" = "Hide";

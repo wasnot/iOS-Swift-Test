@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB2C015C1A95B1FE00BDCFA0 /* InstructionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C015B1A95B1FE00BDCFA0 /* InstructionContentViewController.swift */; };
 		AB3279A21AB2BA190009FB3A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3279A11AB2BA190009FB3A /* SettingTableViewController.swift */; };
+		AB3C27831AB95153003585CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB3C27851AB95153003585CE /* Localizable.strings */; };
 		AB435AF91A152E1300BD630F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB435AFC1A152E1300BD630F /* InfoPlist.strings */; };
 		AB435AFF1A152E5700BD630F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB435B011A152E5700BD630F /* InfoPlist.strings */; };
 		AB435B081A157DF200BD630F /* launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = AB435B071A157DF200BD630F /* launcher.png */; };
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		AB2C015B1A95B1FE00BDCFA0 /* InstructionContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionContentViewController.swift; sourceTree = "<group>"; };
 		AB3279A11AB2BA190009FB3A /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		AB3C27841AB95153003585CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AB3C27861AB95155003585CE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB435AFB1A152E1300BD630F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB435B001A152E5700BD630F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB435B031A1530E900BD630F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 				ABB75F8D1A83932C00F75570 /* InstructionViewController.swift */,
 				AB2C015B1A95B1FE00BDCFA0 /* InstructionContentViewController.swift */,
 				AB3279A11AB2BA190009FB3A /* SettingTableViewController.swift */,
+				AB3C27851AB95153003585CE /* Localizable.strings */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -308,7 +312,7 @@
 						DevelopmentTeam = GL3NKE9BN8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -321,7 +325,7 @@
 						DevelopmentTeam = GL3NKE9BN8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -357,6 +361,7 @@
 				AB58C20D19F8CE19003F287A /* Main.storyboard in Resources */,
 				ABB484A81A727C9100223E0F /* refresh@2x.png in Resources */,
 				AB435AF91A152E1300BD630F /* InfoPlist.strings in Resources */,
+				AB3C27831AB95153003585CE /* Localizable.strings in Resources */,
 				ABB484A51A723BCC00223E0F /* refresh.png in Resources */,
 				AB58C21219F8CE19003F287A /* LaunchScreen.xib in Resources */,
 				AB435B081A157DF200BD630F /* launcher.png in Resources */,
@@ -431,6 +436,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AB3C27851AB95153003585CE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB3C27841AB95153003585CE /* Base */,
+				AB3C27861AB95155003585CE /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		AB435AFC1A152E1300BD630F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -562,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WifiWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -576,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WifiWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -626,6 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WifiCheckWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -648,6 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WifiCheckWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftWidgetTest/Info.plist;

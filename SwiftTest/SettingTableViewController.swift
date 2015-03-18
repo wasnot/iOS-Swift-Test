@@ -9,14 +9,18 @@
 import UIKit
 
 class SettingTableViewController: UITableViewController  {
+    let DEFAULT_SUITE = "group.net.wasnot.ios.wifiwidget";
+    let KEY_DISPLAY_SSID = "displaySSID";
+    let KEY_DISPLAY_MAC = "displayMacAddress";
+    
     //セルタップ時のアクションを分岐させる為の定数(CellのTagに設定する)
     let PROFILE_NAME    = 1
     let PROFILE_JOB     = 2
     let NO_ACTION       = 0//Switchの付いたセル用
     
     //スイッチのアクションを分岐させる為の定数(UISwitchのTagに設定する)
-    let SOUND_BGM       = 1
-    let SOUND_SE        = 2
+    let SWITCH_SSID       = 1
+    let SWITCH_MAC        = 2
     
     @IBOutlet weak var SettingTitle: UINavigationItem!
 
@@ -55,10 +59,10 @@ class SettingTableViewController: UITableViewController  {
     
         switch (section) {
         case 0://第1セクション
-            str_SectionTitle = "プロフィール";
+            str_SectionTitle = NSLocalizedString("LABEL_SETTING_SEC_APP", comment: "About app");
             break;
         case 1://第2セクション
-            str_SectionTitle = "サウンド";
+            str_SectionTitle = NSLocalizedString("LABEL_SETTING_SEC_DISPLAY", comment: "Display settings");
             break;
         default:
             break;
@@ -78,7 +82,7 @@ class SettingTableViewController: UITableViewController  {
         
         switch (section) {
         case 0://第1セクション
-            int_CellCount = 2;
+            int_CellCount = 1;
             break;
         case 1://第2セクション
             int_CellCount = 2;
@@ -123,10 +127,13 @@ class SettingTableViewController: UITableViewController  {
         case 0://第1セクション
             switch (indexPath.row) {
             case 0://第1セル
-                str_CellTitle       = "名前";
-                str_CellTitleDetail = "アルス";
+                str_CellTitle       = NSLocalizedString("LABEL_SETTING_APP_APP_VERSION", comment: "App version");
+                let version: String! = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as String
+                str_CellTitleDetail = version;
                 cell.tag = PROFILE_NAME;//セルタップ時アクション分岐用
                 cell.accessoryType = UITableViewCellAccessoryType.None;//セルアイテム無し
+                
+                cell.selectionStyle = UITableViewCellSelectionStyle.None;
                 break;
                 
             case 1://第2セル
@@ -134,6 +141,7 @@ class SettingTableViewController: UITableViewController  {
                 str_CellTitleDetail = "勇者";
                 cell.tag = PROFILE_JOB;//セルタップ時アクション分岐用
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;//「詳細画面へ」アイテム
+                
                 break;
             default:
                 break;
@@ -143,31 +151,47 @@ class SettingTableViewController: UITableViewController  {
         case 1://第2セクション
             switch (indexPath.row) {
             case 0://第1セル
-                str_CellTitle       = "BGM";
+                str_CellTitle       = NSLocalizedString("LABEL_SETTING_DISPLAY_SSID", comment: "Spot name (SSID)");
                 str_CellTitleDetail = "";
                 cell.tag = NO_ACTION;//セルタップ時アクション分岐用
                 
                 //UISwitchのみタッチ可に見せかける
                 cell.selectionStyle = UITableViewCellSelectionStyle.None;
                 
+                let sharedUserDefaults : NSUserDefaults? = NSUserDefaults(suiteName: DEFAULT_SUITE);
+                var displaySSID : Bool;
+                if(sharedUserDefaults != nil && sharedUserDefaults!.objectForKey(KEY_DISPLAY_SSID) != nil){
+                    displaySSID = sharedUserDefaults!.boolForKey(KEY_DISPLAY_SSID)
+                }else{
+                    displaySSID = true;
+                }
+                
                 //スイッチの配置
-                switchObj.on = true;//スイッチの状態（ONかOFF）
-                switchObj.tag = SOUND_BGM; //複数スイッチの判別用
+                switchObj.on = displaySSID;//スイッチの状態（ONかOFF）
+                switchObj.tag = SWITCH_SSID; //複数スイッチの判別用
                 switchObj.addTarget(self, action: "settingSwitch:", forControlEvents: UIControlEvents.ValueChanged);//スイッチタッチ時メソッドの設定
                 cell.accessoryView = switchObj;
                 break;
                 
             case 1://第2セル
-                str_CellTitle       = "SE";
+                str_CellTitle       = NSLocalizedString("LABEL_SETTING_DISPLAY_MAC", comment: "Mac address");
                 str_CellTitleDetail = "";
                 cell.tag = NO_ACTION;//セルタップ時アクション分岐用
                 
                 //UISwitchのみタッチ可に見せかける
                 cell.selectionStyle = UITableViewCellSelectionStyle.None;
                 
+                let sharedUserDefaults : NSUserDefaults? = NSUserDefaults(suiteName: DEFAULT_SUITE);
+                var displayMac : Bool;
+                if(sharedUserDefaults != nil && sharedUserDefaults!.objectForKey(KEY_DISPLAY_MAC) != nil){
+                    displayMac = sharedUserDefaults!.boolForKey(KEY_DISPLAY_MAC)
+                }else{
+                    displayMac = false;
+                }
+
                 //スイッチの配置
-                switchObj.on = false;//スイッチの状態（ONかOFF）
-                switchObj.tag = SOUND_SE; //複数スイッチの判別用
+                switchObj.on = displayMac;//スイッチの状態（ONかOFF）
+                switchObj.tag = SWITCH_MAC; //複数スイッチの判別用
                 switchObj.addTarget(self, action: "settingSwitch:", forControlEvents: UIControlEvents.ValueChanged);//スイッチタッチ時メソッドの設定
                 cell.accessoryView = switchObj;
                 break;
@@ -279,20 +303,23 @@ class SettingTableViewController: UITableViewController  {
     func settingSwitch(sender : UISwitch ) {
         //スイッチに設定されたタグに応じてアクションを分岐する
         switch (sender.tag) {
-        case SOUND_BGM:
-            
-            NSLog("BGMを %@ に変更しました", sender.on ? "ON" : "OFF");
+        case SWITCH_SSID:
+            NSLog("SSIDを %@ に変更しました", sender.on ? "ON" : "OFF");
             //この先の処理はお任せします
             //「sender.on」で変更後が「ONかOFF」を判別できます
             //その値をDBに反映させる感じでしょうか
-            
+            let sharedUserDefaults : NSUserDefaults? = NSUserDefaults(suiteName: DEFAULT_SUITE);
+            if(sharedUserDefaults != nil){
+                sharedUserDefaults!.setBool(sender.on, forKey: KEY_DISPLAY_SSID);
+            }
             break;
-            
-        case SOUND_SE:
-            
-            NSLog("SEを %@ に変更しました", sender.on ? "ON" : "OFF");
+        case SWITCH_MAC:
+            NSLog("Macを %@ に変更しました", sender.on ? "ON" : "OFF");
             //同上
-            
+            let sharedUserDefaults : NSUserDefaults? = NSUserDefaults(suiteName: DEFAULT_SUITE);
+            if(sharedUserDefaults != nil){
+                sharedUserDefaults!.setBool(sender.on, forKey: KEY_DISPLAY_MAC);
+            }
             break;
         default:
             break;

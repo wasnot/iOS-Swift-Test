@@ -39,6 +39,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.NewData)
     }
     
+    
+    let DEFAULT_SUITE = "group.net.wasnot.ios.wifiwidget";
+    let KEY_DISPLAY_SSID = "displaySSID";
+    let KEY_DISPLAY_MAC = "displayMacAddress";
+
     func updateLabel()
     {
         println("widget update")
@@ -48,6 +53,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         //        self.label.text = dateFormatter.stringFromDate(NSDate())
         
         var success = false
+        
+        // 設定の取得
+        let sharedUserDefaults : NSUserDefaults? = NSUserDefaults(suiteName: DEFAULT_SUITE);
+        var displaySSID : Bool;
+        var displayMac : Bool;
+        if(sharedUserDefaults != nil && sharedUserDefaults!.objectForKey(KEY_DISPLAY_SSID) != nil){
+            displaySSID = sharedUserDefaults!.boolForKey(KEY_DISPLAY_SSID)
+        }else{
+            displaySSID = true;
+        }
+        if(sharedUserDefaults != nil && sharedUserDefaults!.objectForKey(KEY_DISPLAY_MAC) != nil){
+            displayMac = sharedUserDefaults!.boolForKey(KEY_DISPLAY_MAC)
+        }else{
+            displayMac = false;
+        }
+//        var str = "ssid:" + displaySSID.description + " mac:" + displayMac.description;
+        
         
         // 3G接続の場合はnilが戻されるので、以降のコードで注意する。
         //        CFArrayRef
@@ -79,15 +101,34 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     if(dic.count>0){
                         println(dic.count)
                         var ssid : String? = dic[kCNNetworkInfoKeySSID] as? String
-                        if(ssid != nil){
-                            println(ssid)
-                            self.label.text = ssid
-                            success = true
-                        } else {
-                            self.label.text = NSLocalizedString("LABEL_NO_SSID", comment: "Unknown")
-//                            self.label.text = "ssidない"
-                            success = true
+                        var mac : String? = dic[kCNNetworkInfoKeyBSSID] as? String
+                        success = true
+                        
+                        var str : String = "";
+                        if(displaySSID){
+                            if(ssid != nil){
+                                println(ssid)
+                                str = ssid!
+                            } else {
+                                str = NSLocalizedString("LABEL_NO_SSID", comment: "Unknown")
+                                // self.label.text = "ssidない"
+                            }
                         }
+                        if(displaySSID && displayMac){
+                            str += "\n"
+                        }
+                        if(displayMac){
+                            if(mac != nil){
+                                println(mac)
+                                str += mac!
+                            } else {
+                                str += NSLocalizedString("LABEL_NO_MAC", comment: "Unknown")
+                            }
+                        }
+                        if(!displaySSID && !displayMac){
+                            str = NSLocalizedString("LABEL_NO_DISPLAY", comment: "Unknown")
+                        }
+                        self.label.text = str
                         //        var dicRef = CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(interface, 0) as CFStringRef);
                         
                         //        if (dicRef) {
